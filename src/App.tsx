@@ -1234,10 +1234,10 @@ function App() {
                                                                     <div className="border-t border-cyber-border pt-4">
                                                                         <div className="text-xs text-cyber-text-secondary mb-2">GITHUB</div>
                                                                         <span
-                                                                            onClick={(e) => { e.preventDefault(); (window as any).electron?.openExternal(`https://github.com/${selectedSkillData.author.replace('/skills', '')}`); }}
+                                                                            onClick={(e) => { e.preventDefault(); (window as any).electron?.openExternal(`https://github.com/${selectedSkillData.author}`); }}
                                                                             className="text-sm text-cyber-warning hover:underline cursor-pointer"
                                                                         >
-                                                                            github.com/{selectedSkillData.author.replace('/skills', '')}
+                                                                            github.com/{selectedSkillData.author}
                                                                         </span>
                                                                     </div>
                                                                 </div>
@@ -1250,7 +1250,7 @@ function App() {
                                                         {selectedSkillData && (
                                                             <div className="p-3 bg-black/20 border-t border-cyber-border">
                                                                 <span
-                                                                    onClick={(e) => { e.preventDefault(); (window as any).electron?.openExternal(`https://github.com/${selectedSkillData.author}/${selectedSkillData.id}`); }}
+                                                                    onClick={(e) => { e.preventDefault(); (window as any).electron?.openExternal(`https://github.com/${selectedSkillData.author}/tree/main/skills/${selectedSkillData.id}`); }}
                                                                     className="w-full py-2 text-sm font-bold transition-colors bg-cyber-warning text-black hover:bg-cyber-warning/80 flex items-center justify-center gap-2 cursor-pointer"
                                                                 >
                                                                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
