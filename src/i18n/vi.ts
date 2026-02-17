@@ -183,6 +183,12 @@ const vi: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'Đã mã hóa — API Key sẽ tự hủy nếu môi trường thay đổi)',
     'key.destroyed': 'Phát hiện thay đổi môi trường — API Key đã tự hủy, vui lòng nhập lại',
+    // Channels
+    'nav.channels': 'Kênh',
+    'page.channels': 'KÊNH',
+    'channel.standby': 'CHỜ',
+    'channel.linked': 'ĐÃ KẾT NỐI',
+    'channel.enterMessage': 'Nhập tin nhắn...',
     'hint.devInvite': 'Phát triển ứng dụng hoặc trò chơi AI — tham khảo \"Reversi\" và \"AI Translate\".',
 };
 

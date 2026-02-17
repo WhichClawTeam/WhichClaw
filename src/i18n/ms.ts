@@ -185,6 +185,12 @@ const ms: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'Disulitkan — API Key akan musnah jika persekitaran berubah)',
     'key.destroyed': 'Perubahan persekitaran dikesan — API Key telah musnah, sila masukkan semula',
+    // Channels
+    'nav.channels': 'Saluran',
+    'page.channels': 'SALURAN',
+    'channel.standby': 'SEDIA',
+    'channel.linked': 'DISAMBUNG',
+    'channel.enterMessage': 'Masukkan mesej...',
     'hint.devInvite': 'Bangunkan aplikasi atau permainan AI — rujuk \"Reversi\" dan \"AI Translate\".',
 };
 

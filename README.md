@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <img src="build/icon.png" alt="WhichClaw" width="120" />
 </p>
 
@@ -10,11 +10,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/ebenxp707-boop/WhichClaw/releases">
-    <img src="https://img.shields.io/github/v/release/ebenxp707-boop/WhichClaw?style=flat-square&color=00FF9D" alt="Release" />
+  <a href="https://github.com/WhichClawTeam/WhichClaw/releases">
+    <img src="https://img.shields.io/github/v/release/WhichClawTeam/WhichClaw?style=flat-square&color=00FF9D" alt="Release" />
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue?style=flat-square" alt="Platform" />
-  <img src="https://img.shields.io/github/license/ebenxp707-boop/WhichClaw?style=flat-square" alt="License" />
+  <img src="https://img.shields.io/github/license/WhichClawTeam/WhichClaw?style=flat-square" alt="License" />
 </p>
 
 <p align="center">
@@ -78,9 +78,9 @@ Get the latest release for your platform:
 
 | Platform | Download |
 |----------|----------|
-| Windows  | [WhichClaw-Setup.exe](https://github.com/ebenxp707-boop/WhichClaw/releases/latest) |
-| macOS    | [WhichClaw.dmg](https://github.com/ebenxp707-boop/WhichClaw/releases/latest) |
-| Linux    | [WhichClaw.AppImage](https://github.com/ebenxp707-boop/WhichClaw/releases/latest) |
+| Windows  | [WhichClaw-Setup.exe](https://github.com/WhichClawTeam/WhichClaw/releases/latest) |
+| macOS    | [WhichClaw.dmg](https://github.com/WhichClawTeam/WhichClaw/releases/latest) |
+| Linux    | [WhichClaw.AppImage](https://github.com/WhichClawTeam/WhichClaw/releases/latest) |
 
 ### Linux Notes
 
@@ -102,6 +102,8 @@ chmod +x WhichClaw-*.AppImage
 | OpenCode | ✅ Supported | ✅ | OpenAI |
 | Codex | ✅ Supported | ✅ | OpenAI |
 | Roo Code | ✅ Supported | ✅ | OpenAI |
+| ZeroClaw | ✅ Supported | ✅ | OpenAI |
+| Aider | ✅ Supported | ✅ | OpenAI / Anthropic |
 
 ## 🏗️ Tech Stack
 
@@ -142,8 +144,8 @@ We're especially looking for help with:
 ## 📬 Contact
 
 - 📧 Email: [hi@whichclaw.com](mailto:hi@whichclaw.com)
-- 🐛 Bug Reports: [GitHub Issues](https://github.com/ebenxp707-boop/WhichClaw/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/ebenxp707-boop/WhichClaw/discussions)
+- 🐛 Bug Reports: [GitHub Issues](https://github.com/WhichClawTeam/WhichClaw/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/WhichClawTeam/WhichClaw/discussions)
 
 ## ⭐ Support
 
@@ -157,5 +159,5 @@ If you find WhichClaw useful, please consider giving it a ⭐ on GitHub — it h
 
 <p align="center">
   Made with 💚 by the WhichClaw Team<br/>
-  <sub>🌐 <a href="https://www.whichclaw.com">www.whichclaw.com</a></sub>
+  <sub>🌐 <a href="https://whichclaw.com">whichclaw.com</a></sub>
 </p>

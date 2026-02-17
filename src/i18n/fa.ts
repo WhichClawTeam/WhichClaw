@@ -50,6 +50,12 @@ const fa: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'رمزگذاری شده — API Key در صورت تغییر محیط خود تخریب می‌شود)',
     'key.destroyed': 'تغییر محیط شناسایی شد — API Key خود تخریب شده، لطفاً دوباره وارد کنید)',
+    // Channels
+    'nav.channels': 'کانال‌ها',
+    'page.channels': 'کانال‌ها',
+    'channel.standby': 'در انتظار',
+    'channel.linked': 'متصل',
+    'channel.enterMessage': 'پیام بنویسید...',
     'hint.devInvite': 'برنامه‌ها یا بازی‌های هوش مصنوعی بسازید — به \"Reversi\" و \"AI Translate\" مراجعه کنید.',
 };
 

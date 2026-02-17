@@ -210,6 +210,12 @@ const ja: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'グローバル暗号化済み — 環境変更で API Key は自壊します',
     'key.destroyed': '環境変更を検出 — API Key は自壊しました。再入力してください',
+    // Channels
+    'nav.channels': 'チャンネル',
+    'page.channels': 'チャンネル',
+    'channel.standby': '待機',
+    'channel.linked': '接続済み',
+    'channel.enterMessage': 'メッセージを入力...',
     'hint.devInvite': 'AI アプリや AI ゲームを開発 — 「リバーシ」と「AI 翻訳」を参考に。',
 };
 

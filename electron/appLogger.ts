@@ -5,7 +5,7 @@ import { BrowserWindow } from 'electron';
 // 用于收集用户操作日志并推送到前端 Logs & Debug 页面
 // ============================================================
 
-export type LogCategory = 'ERROR' | 'MODEL' | 'DOWNLOAD' | 'TOOL' | 'SECURITY';
+export type LogCategory = 'ERROR' | 'MODEL' | 'DOWNLOAD' | 'TOOL' | 'SECURITY' | 'CHANNEL';
 
 export interface AppLogEntry {
     timestamp: string;

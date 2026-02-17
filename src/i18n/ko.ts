@@ -210,6 +210,12 @@ const ko: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': '전역 암호화됨 — 환경 변경 시 API Key가 자동 파기됩니다)',
     'key.destroyed': '환경 변경 감지 — API Key가 파기되었습니다. 다시 입력하세요)',
+    // Channels
+    'nav.channels': '채널',
+    'page.channels': '채널',
+    'channel.standby': '대기',
+    'channel.linked': '연결됨',
+    'channel.enterMessage': '메시지 입력...',
     'hint.devInvite': 'AI 앱 또는 AI 게임 개발 — "리버시"와 "AI 번역"을 참고하세요.',
 };
 

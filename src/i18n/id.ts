@@ -185,6 +185,12 @@ const id: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'Terenkripsi — API Key akan hancur jika lingkungan berubah)',
     'key.destroyed': 'Perubahan lingkungan terdeteksi — API Key telah hancur, silakan masukkan ulang',
+    // Channels
+    'nav.channels': 'Kanal',
+    'page.channels': 'KANAL',
+    'channel.standby': 'SIAGA',
+    'channel.linked': 'TERHUBUNG',
+    'channel.enterMessage': 'Masukkan pesan...',
     'hint.devInvite': 'Kembangkan aplikasi atau game AI — lihat \"Reversi\" dan \"AI Translate\".',
 };
 

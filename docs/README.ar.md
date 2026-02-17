@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <img src="../build/icon.png" alt="WhichClaw" width="120" />
 </p>
 
@@ -10,22 +10,22 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/ebenxp707-boop/WhichClaw/releases">
-    <img src="https://img.shields.io/github/v/release/ebenxp707-boop/WhichClaw?style=flat-square&color=00FF9D" alt="Release" />
+  <a href="https://github.com/WhichClawTeam/WhichClaw/releases">
+    <img src="https://img.shields.io/github/v/release/WhichClawTeam/WhichClaw?style=flat-square&color=00FF9D" alt="Release" />
   </a>
   <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue?style=flat-square" alt="Platform" />
-  <img src="https://img.shields.io/github/license/ebenxp707-boop/WhichClaw?style=flat-square" alt="License" />
+  <img src="https://img.shields.io/github/license/WhichClawTeam/WhichClaw?style=flat-square" alt="License" />
 </p>
 
 <p align="center">
-  <a href="../README.md">English</a> · <a href="./README.zh-CN.md">简体中�?/a> · <a href="./README.zh-TW.md">繁體中文</a> · <a href="./README.ja.md">日本�?/a> · <a href="./README.ko.md">한국�?/a> · <a href="./README.es.md">Español</a> · <a href="./README.fr.md">Français</a> · <a href="./README.de.md">Deutsch</a> · <a href="./README.pt.md">Português</a> · <a href="./README.ru.md">Русский</a> · **العربية**
+  <a href="../README.md">English</a> · <a href="./README.zh-CN.md">简体中�?/a> · <a href="./README.zh-TW.md">繁體中文</a> · <a href="./README.ja.md">日本�?/a> · <a href="./README.ko.md">한국�?/a> · <a href="./README.es.md">Español</a> · <a href="./README.fr.md">Français</a> · <a href="./README.de.md">Deutsch</a> · <a href="./README.pt.md">Português</a> · <a href="./README.ru.md">Русский</a> · **العربية**
 </p>
 
 ---
 
-## �?ما هو WhichClaw؟
+## �?ما هو WhichClaw؟
 
-WhichClaw هو تطبيق سطح مكتب يوفر **واجهة مرئية وموحدة** لإدارة نماذج الذكاء الاصطناعي عبر أدوات البرمجة الخاصة بك. لا مزيد من البحث في ملفات التكوين �?فقط انقر وبدّل.
+WhichClaw هو تطبيق سطح مكتب يوفر **واجهة مرئية وموحدة** لإدارة نماذج الذكاء الاصطناعي عبر أدوات البرمجة الخاصة بك. لا مزيد من البحث في ملفات التكوين �?فقط انقر وبدّل.
 
 ### المشكلة
 
@@ -37,27 +37,27 @@ WhichClaw هو تطبيق سطح مكتب يوفر **واجهة مرئية وم�
 
 WhichClaw يعمل كـ **لوحة تحكم مركزية** لجميع أدوات البرمجة بالذكاء الاصطناعي:
 
-- 🎯 **تبديل النموذج بنقرة واحدة** �?بدّل نماذج الذكاء الاصطناعي بصرياً لأي أداة مدعومة
-- 🔀 **بروتوكول مزدوج** �?دعم OpenAI و Anthropic API، بدّل النماذج في أي وقت
-- 🚇 **وكيل نفق ذكي** �?الوصول إلى واجهات برمجة التطبيقات المحظورة جغرافياً بدون VPN كامل
-- 🧩 **متصفح المهارات** �?اكتشف وثبّت وأدر مهارات الذكاء الاصطناعي
-- 🖥�?**خادم النماذج المحلي** �?شغّل نماذج مفتوحة المصدر (Qwen، DeepSeek، Llama) محلياً عبر llama.cpp
-- 🌍 **28 لغة** �?دعم كامل للتدويل
-- 🎮 **تطبيقات ذكاء اصطناعي مدمجة** �?ألعاب وأدوات تفاعلية مثل Reversi و AI Translate
-- 🌃 **واجهة هاكر سايبربانك** �?جمالية طرفية بالنيون الأخضر تجعل البرمجة مستقبلية
+- 🎯 **تبديل النموذج بنقرة واحدة** �?بدّل نماذج الذكاء الاصطناعي بصرياً لأي أداة مدعومة
+- 🔀 **بروتوكول مزدوج** �?دعم OpenAI و Anthropic API، بدّل النماذج في أي وقت
+- 🚇 **وكيل نفق ذكي** �?الوصول إلى واجهات برمجة التطبيقات المحظورة جغرافياً بدون VPN كامل
+- 🧩 **متصفح المهارات** �?اكتشف وثبّت وأدر مهارات الذكاء الاصطناعي
+- 🖥�?**خادم النماذج المحلي** �?شغّل نماذج مفتوحة المصدر (Qwen، DeepSeek، Llama) محلياً عبر llama.cpp
+- 🌍 **28 لغة** �?دعم كامل للتدويل
+- 🎮 **تطبيقات ذكاء اصطناعي مدمجة** �?ألعاب وأدوات تفاعلية مثل Reversi و AI Translate
+- 🌃 **واجهة هاكر سايبربانك** �?جمالية طرفية بالنيون الأخضر تجعل البرمجة مستقبلية
 
-## 🖼�?لقطات الشاشة
+## 🖼�?لقطات الشاشة
 
-### Model Nexus �?أدر جميع نماذج الذكاء الاصطناعي في مكان واحد
+### Model Nexus �?أدر جميع نماذج الذكاء الاصطناعي في مكان واحد
 ![Model Nexus](1.png)
 
-### App Manager �?تبديل النموذج بنقرة واحدة لجميع الأدوات
+### App Manager �?تبديل النموذج بنقرة واحدة لجميع الأدوات
 ![App Manager](2.png)
 
-### Local Server �?شغّل نماذج مفتوحة المصدر محلياً مع llama.cpp
+### Local Server �?شغّل نماذج مفتوحة المصدر محلياً مع llama.cpp
 ![Local Server](3.png)
 
-### Skill Browser �?اكتشف وثبّت مهارات الذكاء الاصطناعي
+### Skill Browser �?اكتشف وثبّت مهارات الذكاء الاصطناعي
 ![Skill Browser](4.png)
 
 ## 🚀 البداية السريعة
@@ -68,9 +68,9 @@ WhichClaw يعمل كـ **لوحة تحكم مركزية** لجميع أدوات
 
 | المنصة | تحميل |
 |----------|----------|
-| Windows  | [WhichClaw-Setup.exe](https://github.com/ebenxp707-boop/WhichClaw/releases/latest) |
-| macOS    | [WhichClaw.dmg](https://github.com/ebenxp707-boop/WhichClaw/releases/latest) |
-| Linux    | [WhichClaw.AppImage](https://github.com/ebenxp707-boop/WhichClaw/releases/latest) |
+| Windows  | [WhichClaw-Setup.exe](https://github.com/WhichClawTeam/WhichClaw/releases/latest) |
+| macOS    | [WhichClaw.dmg](https://github.com/WhichClawTeam/WhichClaw/releases/latest) |
+| Linux    | [WhichClaw.AppImage](https://github.com/WhichClawTeam/WhichClaw/releases/latest) |
 
 ### ملاحظات Linux
 
@@ -85,23 +85,23 @@ chmod +x WhichClaw-*.AppImage
 
 | الأداة | الحالة | تبديل النموذج | البروتوكول |
 |------|--------|----------------|----------|
-| OpenClaw | �?مدعوم | �?| OpenAI / Anthropic |
-| Claude Code | �?مدعوم | �?| Anthropic |
-| Cline | �?مدعوم | �?| OpenAI |
-| Continue | �?مدعوم | �?| OpenAI |
-| OpenCode | �?مدعوم | �?| OpenAI |
-| Codex | �?مدعوم | �?| OpenAI |
-| Roo Code | �?مدعوم | �?| OpenAI |
+| OpenClaw | �?مدعوم | �?| OpenAI / Anthropic |
+| Claude Code | �?مدعوم | �?| Anthropic |
+| Cline | �?مدعوم | �?| OpenAI |
+| Continue | �?مدعوم | �?| OpenAI |
+| OpenCode | �?مدعوم | �?| OpenAI |
+| Codex | �?مدعوم | �?| OpenAI |
+| Roo Code | �?مدعوم | �?| OpenAI |
 
-## 🏗�?المكدس التقني
+## 🏗�?المكدس التقني
 
-- **Electron** �?إطار عمل سطح مكتب متعدد المنصات
-- **React + TypeScript** �?إطار عمل واجهة المستخدم
-- **Vanilla CSS** �?نظام تصميم سايبربانك مخصص
-- **Vite** �?أداة البناء
-- **llama.cpp** �?محرك استدلال النماذج المحلي
+- **Electron** �?إطار عمل سطح مكتب متعدد المنصات
+- **React + TypeScript** �?إطار عمل واجهة المستخدم
+- **Vanilla CSS** �?نظام تصميم سايبربانك مخصص
+- **Vite** �?أداة البناء
+- **llama.cpp** �?محرك استدلال النماذج المحلي
 
-## 🛠�?التطوير
+## 🛠�?التطوير
 
 ```bash
 npm install
@@ -114,9 +114,9 @@ npm run build
 المساهمات مرحب بها! لا تتردد في فتح issues أو إرسال pull requests.
 
 We're especially looking for help with:
-- 🍎 **اختبار macOS** �?لم نختبر بناء macOS بالكامل بعد
-- 🔧 **تكاملات جديدة** �?ساعدنا في إضافة دعم لمزيد من أدوات الذكاء الاصطناعي
-- 🌐 **تحسين الترجمات** �?المتحدثون الأصليون مرحب بهم!
+- 🍎 **اختبار macOS** �?لم نختبر بناء macOS بالكامل بعد
+- 🔧 **تكاملات جديدة** �?ساعدنا في إضافة دعم لمزيد من أدوات الذكاء الاصطناعي
+- 🌐 **تحسين الترجمات** �?المتحدثون الأصليون مرحب بهم!
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -127,12 +127,12 @@ We're especially looking for help with:
 ## 📬 Contact
 
 - 📧 Email: [hi@whichclaw.com](mailto:hi@whichclaw.com)
-- 🐛 Bug Reports: [GitHub Issues](https://github.com/ebenxp707-boop/WhichClaw/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/ebenxp707-boop/WhichClaw/discussions)
+- 🐛 Bug Reports: [GitHub Issues](https://github.com/WhichClawTeam/WhichClaw/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/WhichClawTeam/WhichClaw/discussions)
 
-## �?الدعم
+## �?الدعم
 
-إذا وجدت WhichClaw مفيداً، فكّر في إعطائه �?على GitHub �?يساعد الآخرين على اكتشاف المشروع!
+إذا وجدت WhichClaw مفيداً، فكّر في إعطائه �?على GitHub �?يساعد الآخرين على اكتشاف المشروع!
 
 ## 📄 الرخصة
 

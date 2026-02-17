@@ -745,12 +745,35 @@ ipcMain.handle('get-claude-config', async (_event, configPath: string) => {
     }
 });
 
+// ========== Channel Management ==========
+import * as channelManager from './channelManager.js';
+
+// Get channel config
+ipcMain.handle('get-channels', () => {
+    return channelManager.getChannels();
+});
+
+// Save channel config
+ipcMain.handle('save-channels', (_event, channels: { id: number; name: string; address: string; protocol: string }[]) => {
+    channelManager.saveChannels(channels);
+    return { success: true };
+});
+
 // ========== Model Management ==========
 import * as modelManager from './modelManager.js';
 
 // Get all models
 ipcMain.handle('get-models', () => {
     return modelManager.getModels();
+});
+
+// Get models with decrypted API keys (for sharing via Channels)
+ipcMain.handle('get-models-decrypted', () => {
+    const models = modelManager.getModels();
+    return models.map(m => ({
+        ...m,
+        apiKey: modelManager.decryptKeyForUse(m.apiKey),
+    }));
 });
 
 // Add model
@@ -966,6 +989,12 @@ ipcMain.handle('check-for-updates', async () => {
     } catch (err: any) {
         return { success: false, error: err.message };
     }
+});
+
+// Frontend can push logs via IPC
+ipcMain.handle('add-app-log', (_event, category: string, message: string) => {
+    addAppLog(category as any, message);
+    return { success: true };
 });
 
 ipcMain.handle('get-app-logs', () => {

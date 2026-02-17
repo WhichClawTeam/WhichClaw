@@ -183,6 +183,12 @@ const hi: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'एन्क्रिप्टेड — वातावरण बदलने पर API Key स्वतः नष्ट हो जाएगी)',
     'key.destroyed': 'वातावरण परिवर्तन का पता चला — API Key नष्ट हो गई, कृपया पुनः दर्ज करें',
+    // Channels
+    'nav.channels': 'चैनल',
+    'page.channels': 'चैनल',
+    'channel.standby': 'प्रतीक्षा',
+    'channel.linked': 'जुड़ा हुआ',
+    'channel.enterMessage': 'संदेश दर्ज करें...',
     'hint.devInvite': 'AI ऐप्स या AI गेम्स विकसित करें — \"Reversi\" और \"AI Translate\" देखें।',
 };
 

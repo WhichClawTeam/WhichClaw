@@ -50,6 +50,12 @@ const el: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'Κρυπτογραφημένο — το API Key θα αυτοκαταστραφεί αν αλλάξει το περιβάλλον)',
     'key.destroyed': 'Ανιχνεύθηκε αλλαγή περιβάλλοντος — το API Key αυτοκαταστράφηκε, εισάγετε ξανά',
+    // Channels
+    'nav.channels': 'Κανάλια',
+    'page.channels': 'ΚΑΝΆΛΙΑ',
+    'channel.standby': 'ΑΝΑΜΟΝΉ',
+    'channel.linked': 'ΣΥΝΔΕΔΕΜΈΝΟ',
+    'channel.enterMessage': 'Εισάγετε μήνυμα...',
     'hint.devInvite': 'Αναπτύξτε AI εφαρμογές ή AI παιχνίδια — δείτε \"Reversi\" και \"AI Translate\".',
 };
 

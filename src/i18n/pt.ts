@@ -183,6 +183,12 @@ const pt: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'Criptografado — API Key se autodestruirá em caso de mudança de ambiente)',
     'key.destroyed': 'Mudança de ambiente detectada — API Key se autodestruiu, insira novamente',
+    // Channels
+    'nav.channels': 'Canais',
+    'page.channels': 'CANAIS',
+    'channel.standby': 'EM ESPERA',
+    'channel.linked': 'CONECTADO',
+    'channel.enterMessage': 'Digite uma mensagem...',
     'hint.devInvite': 'Desenvolva apps ou jogos IA — veja \"Reversi\" e \"AI Translate\".',
 };
 

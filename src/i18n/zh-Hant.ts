@@ -210,6 +210,12 @@ const zhHant: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': '已全域加密，任何環境改變 API Key 將自毀',
     'key.destroyed': '偵測到環境已改變，API Key 已自毀，請重新輸入',
+    // Channels
+    'nav.channels': '頻道',
+    'page.channels': '頻道',
+    'channel.standby': '待命',
+    'channel.linked': '已連線',
+    'channel.enterMessage': '輸入訊息...',
     'hint.devInvite': '開發 AI 應用或 AI 遊戲，參考「黑白棋」和「AI 翻譯」。',
 };
 

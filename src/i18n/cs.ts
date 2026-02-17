@@ -183,6 +183,12 @@ const cs: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'Globálně šifrováno — API Key se zničí při změně prostředí)',
     'key.destroyed': 'Zjištěna změna prostředí — API Key byl zničen, zadejte znovu',
+    // Channels
+    'nav.channels': 'Kanály',
+    'page.channels': 'KANÁLY',
+    'channel.standby': 'POHOTOVOST',
+    'channel.linked': 'PŘIPOJENO',
+    'channel.enterMessage': 'Napište zprávu...',
     'hint.devInvite': 'Vyvíjejte AI aplikace nebo AI hry — viz \"Reversi\" a \"AI Translate\".',
 };
 

@@ -55,6 +55,26 @@ pre {
   scrollbar-width: none;
 }
 
+/* 细隐身滚动条 — 用于聊天/终端区域 */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 170, 0.15) transparent;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  display: block;
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 170, 0.15);
+  border-radius: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 170, 0.35);
+}
+
 /* Grid background effect */
 .grid-bg {
   background-image:

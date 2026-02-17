@@ -183,6 +183,12 @@ const bn: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'গ্লোবালি এনক্রিপ্টেড — পরিবেশ পরিবর্তন হলে API Key স্বয়ংক্রিয়ভাবে ধ্বংস হবে)',
     'key.destroyed': 'পরিবেশ পরিবর্তন শনাক্ত — API Key ধ্বংস হয়েছে, পুনরায় প্রবেশ করুন',
+    // Channels
+    'nav.channels': 'চ্যানেল',
+    'page.channels': 'চ্যানেল',
+    'channel.standby': 'অপেক্ষায়',
+    'channel.linked': 'সংযুক্ত',
+    'channel.enterMessage': 'বার্তা লিখুন...',
     'hint.devInvite': 'AI অ্যাপ বা AI গেম তৈরি করুন — \"Reversi\" ও \"AI Translate\" দেখুন।',
 };
 

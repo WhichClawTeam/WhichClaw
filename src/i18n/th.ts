@@ -185,6 +185,12 @@ const th: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'เข้ารหัสแล้ว — API Key จะถูกทำลายเมื่อสภาพแวดล้อมเปลี่ยน)',
     'key.destroyed': 'ตรวจพบการเปลี่ยนแปลงสภาพแวดล้อม — API Key ถูกทำลายแล้ว กรุณากรอกใหม่',
+    // Channels
+    'nav.channels': 'ช่อง',
+    'page.channels': 'ช่อง',
+    'channel.standby': 'รอ',
+    'channel.linked': 'เชื่อมต่อแล้ว',
+    'channel.enterMessage': 'พิมพ์ข้อความ...',
     'hint.devInvite': 'พัฒนาแอป AI หรือเกม AI — ดูตัวอย่าง \"Reversi\" และ \"AI Translate\"',
 };
 

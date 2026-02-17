@@ -36,8 +36,13 @@ try {
         setToolModel: (toolId: string, modelConfig: { name: string; baseUrl: string; apiKey: string; model: string }) => ipcRenderer.invoke('set-tool-model', toolId, modelConfig),
         getClaudeConfig: (configPath: string) => ipcRenderer.invoke('get-claude-config', configPath),
 
+        // Channel management API
+        getChannels: () => ipcRenderer.invoke('get-channels'),
+        saveChannels: (channels: { id: number; name: string; address: string; protocol: string }[]) => ipcRenderer.invoke('save-channels', channels),
+
         // Model management API
         getModels: () => ipcRenderer.invoke('get-models'),
+        getModelsDecrypted: () => ipcRenderer.invoke('get-models-decrypted'),
         addModel: (config: { name: string; baseUrl: string; anthropicUrl?: string; apiKey: string; modelId?: string; proxyUrl?: string; ssNode?: any }) => ipcRenderer.invoke('add-model', config),
         deleteModel: (internalId: string) => ipcRenderer.invoke('delete-model', internalId),
         updateModel: (internalId: string, updates: { name?: string; baseUrl?: string; anthropicUrl?: string; apiKey?: string; modelId?: string; proxyUrl?: string; ssNode?: any }) => ipcRenderer.invoke('update-model', internalId, updates),
@@ -99,6 +104,7 @@ try {
 
         // App Log APIs
         getAppLogs: () => ipcRenderer.invoke('get-app-logs'),
+        addAppLog: (category: string, message: string) => ipcRenderer.invoke('add-app-log', category, message),
         clearAppLogs: () => ipcRenderer.invoke('clear-app-logs'),
         onAppLog: (callback: (entry: { timestamp: string; category: string; message: string }) => void) => {
             ipcRenderer.removeAllListeners('app-log');

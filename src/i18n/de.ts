@@ -210,6 +210,12 @@ const de: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'Global verschlüsselt — API Key wird bei Umgebungsänderung zerstört)',
     'key.destroyed': 'Umgebungsänderung erkannt — API Key wurde zerstört, bitte neu eingeben',
+    // Channels
+    'nav.channels': 'Kanäle',
+    'page.channels': 'KANÄLE',
+    'channel.standby': 'BEREIT',
+    'channel.linked': 'VERBUNDEN',
+    'channel.enterMessage': 'Nachricht eingeben...',
     'hint.devInvite': 'KI-Apps oder KI-Spiele entwickeln — siehe \"Reversi\" und \"AI Translate\".',
 };
 

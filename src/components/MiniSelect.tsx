@@ -45,7 +45,7 @@ export const MiniSelect: React.FC<MiniSelectProps> = ({ value, onChange, options
             </button>
 
             {isOpen && (
-                <div className="absolute top-full left-0 right-0 mt-px bg-black border border-cyber-accent/60 max-h-40 overflow-y-auto z-50 rounded-button">
+                <div className="absolute top-full left-0 right-0 mt-px bg-black border border-cyber-accent/60 max-h-52 overflow-y-auto z-50 rounded-button">
                     {options.map((option) => (
                         <div
                             key={option.id}

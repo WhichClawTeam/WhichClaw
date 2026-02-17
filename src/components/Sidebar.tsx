@@ -1,13 +1,13 @@
 // 侧边栏导航组件
 import { useState, useEffect } from 'react';
-import { Box, Zap, Cpu, Activity, Server } from 'lucide-react';
+import { Box, Zap, Cpu, Activity, Server, MessageSquare } from 'lucide-react';
 import { NavItem } from './NavItem';
 import { useI18n } from '../hooks/useI18n';
 
 declare const __APP_EDITION__: string;
 const isFullEdition = __APP_EDITION__ === 'full';
 
-export type PageType = 'models' | 'skills' | 'agents' | 'player' | 'logs';
+export type PageType = 'models' | 'skills' | 'agents' | 'player' | 'logs' | 'chat';
 
 interface SidebarProps {
     activePage: PageType;
@@ -77,6 +77,12 @@ export const Sidebar = ({ activePage, onPageChange, showLogsPage = true }: Sideb
                         onClick={() => onPageChange('logs')}
                     />
                 )}
+                <NavItem
+                    icon={<MessageSquare size={18} />}
+                    label={t('nav.channels')}
+                    active={activePage === 'chat'}
+                    onClick={() => onPageChange('chat')}
+                />
             </div>
 
             {isFullEdition && (

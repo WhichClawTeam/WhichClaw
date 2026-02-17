@@ -95,6 +95,10 @@ export type TKey =
     | 'btn.select'
     // API Key 加密状态提示
     | 'key.encrypted' | 'key.destroyed'
+    // Main Console
+    | 'nav.channels' | 'page.channels'
+    // Channels
+    | 'channel.standby' | 'channel.linked' | 'channel.enterMessage'
     // 开发者邀请提示
     | 'hint.devInvite';
 

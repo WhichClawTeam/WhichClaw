@@ -183,6 +183,12 @@ const ar: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'مشفّر عالميًا — سيتم تدمير API Key ذاتيًا عند تغيير البيئة)',
     'key.destroyed': 'تم اكتشاف تغيير في البيئة — تم تدمير API Key ذاتيًا، يرجى إعادة الإدخال)',
+    // Channels
+    'nav.channels': 'القنوات',
+    'page.channels': 'القنوات',
+    'channel.standby': 'في الانتظار',
+    'channel.linked': 'متصل',
+    'channel.enterMessage': 'أدخل رسالة...',
     'hint.devInvite': 'طوّر تطبيقات أو ألعاب ذكاء اصطناعي — راجع \"Reversi\" و \"AI Translate\".',
 };
 

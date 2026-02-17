@@ -50,6 +50,12 @@ const fi: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'Salattu — API Key tuhoutuu ympäristön muuttuessa)',
     'key.destroyed': 'Ympäristömuutos havaittu — API Key on tuhoutunut, syötä uudelleen',
+    // Channels
+    'nav.channels': 'Kanavat',
+    'page.channels': 'KANAVAT',
+    'channel.standby': 'VALMIUSTILA',
+    'channel.linked': 'YHDISTETTY',
+    'channel.enterMessage': 'Kirjoita viesti...',
     'hint.devInvite': 'Kehitä tekoälysovelluksia tai -pelejä — katso \"Reversi\" ja \"AI Translate\".',
 };
 

@@ -183,6 +183,12 @@ const tr: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'Şifrelenmiş — ortam değişirse API Key kendini imha edecektir)',
     'key.destroyed': 'Ortam değişikliği tespit edildi — API Key imha edildi, lütfen yeniden girin',
+    // Channels
+    'nav.channels': 'Kanallar',
+    'page.channels': 'KANALLAR',
+    'channel.standby': 'BEKLEMEDE',
+    'channel.linked': 'BAĞLI',
+    'channel.enterMessage': 'Mesaj yazın...',
     'hint.devInvite': 'AI uygulamaları veya AI oyunları geliştirin — \"Reversi\" ve \"AI Translate\"\'e bakın.',
 };
 

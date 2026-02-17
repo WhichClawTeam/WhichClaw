@@ -5,6 +5,7 @@ import http from 'http';
 import https from 'https';
 import path from 'path';
 import fs from 'fs';
+import os from 'os';
 import { addAppLog } from '../appLogger.js';
 import { isLlamaServerInstalled, findLlamaServerInUserData, downloadLlamaServer, getLlamaInstallDir, cancelLlamaDownload } from '../llamaDownloader.js';
 
@@ -719,14 +720,15 @@ export function registerLocalModelHandlers() {
         return defaultModelsDir;
     }
 
-    // Load Model Store Config
-    function loadStoreConfig(): any[] {
+    // Load Model Store Config (Remote → Cache → Built-in fallback)
+    const STORE_CONFIG_URL = 'https://whichclaw.com/api/store/models.json';
+    const storeCachePath = path.join(os.homedir(), '.whichclaw', 'cache', 'store-models.json');
+
+    function loadLocalStoreConfig(): any[] {
         const configPaths: string[] = [];
-        // 打包后: resources/local/
         if (process.resourcesPath) {
             configPaths.push(path.join(process.resourcesPath, 'local', 'modelStoreConfig.json'));
         }
-        // 开发模式路径
         configPaths.push(path.join(__dirname, '../local/modelStoreConfig.json'));
         configPaths.push(path.join(process.cwd(), 'electron/local/modelStoreConfig.json'));
 
@@ -735,20 +737,82 @@ export function registerLocalModelHandlers() {
                 try {
                     return JSON.parse(fs.readFileSync(configPath, 'utf-8'));
                 } catch (e) {
-                    console.error('[ModelStore] Read config failed:', e);
+                    console.error('[ModelStore] Read local config failed:', e);
                 }
             }
         }
         return [];
     }
 
-    // 当前活跃下载（可暂停/取消）
-    let activeDownload: { abort: () => void; fileName: string; paused: boolean } | null = null;
+    function loadCachedStoreConfig(): any[] {
+        if (fs.existsSync(storeCachePath)) {
+            try {
+                return JSON.parse(fs.readFileSync(storeCachePath, 'utf-8'));
+            } catch { /* ignore */ }
+        }
+        return [];
+    }
 
-    // 6. Get Model Store List
-    ipcMain.handle('model:get-store-models', () => {
-        return loadStoreConfig();
+    function saveCachedStoreConfig(data: any[]): void {
+        try {
+            const cacheDir = path.dirname(storeCachePath);
+            if (!fs.existsSync(cacheDir)) fs.mkdirSync(cacheDir, { recursive: true });
+            fs.writeFileSync(storeCachePath, JSON.stringify(data, null, 2), 'utf-8');
+        } catch (e) {
+            console.error('[ModelStore] Save cache failed:', e);
+        }
+    }
+
+    function fetchRemoteStoreConfig(): Promise<any[]> {
+        return new Promise((resolve) => {
+            const req = https.get(STORE_CONFIG_URL, { timeout: 8000 }, (res) => {
+                if (res.statusCode !== 200) {
+                    resolve([]);
+                    return;
+                }
+                let data = '';
+                res.on('data', (chunk: string) => { data += chunk; });
+                res.on('end', () => {
+                    try {
+                        const parsed = JSON.parse(data);
+                        if (Array.isArray(parsed) && parsed.length > 0) {
+                            resolve(parsed);
+                        } else {
+                            resolve([]);
+                        }
+                    } catch {
+                        resolve([]);
+                    }
+                });
+            });
+            req.on('error', () => resolve([]));
+            req.on('timeout', () => { req.destroy(); resolve([]); });
+        });
+    }
+
+    // 6. Get Model Store List (Remote first, cache fallback, built-in last)
+    ipcMain.handle('model:get-store-models', async () => {
+        // Try remote
+        const remote = await fetchRemoteStoreConfig();
+        if (remote.length > 0) {
+            saveCachedStoreConfig(remote);
+            console.log(`[ModelStore] Loaded ${remote.length} models from remote`);
+            return remote;
+        }
+        // Try cache
+        const cached = loadCachedStoreConfig();
+        if (cached.length > 0) {
+            console.log(`[ModelStore] Loaded ${cached.length} models from cache`);
+            return cached;
+        }
+        // Fallback to built-in
+        const local = loadLocalStoreConfig();
+        console.log(`[ModelStore] Loaded ${local.length} models from built-in`);
+        return local;
     });
+
+    // Active download reference (pausable/cancellable)
+    let activeDownload: { abort: () => void; fileName: string; paused: boolean } | null = null;
 
     // 7. Get all model directories (Multi-dir)
     ipcMain.handle('model:get-models-dir', () => {

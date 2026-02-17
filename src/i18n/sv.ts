@@ -50,6 +50,12 @@ const sv: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'Krypterat — API Key förstörs vid miljöändring)',
     'key.destroyed': 'Miljöändring upptäckt — API Key har förstörts, ange på nytt',
+    // Channels
+    'nav.channels': 'Kanaler',
+    'page.channels': 'KANALER',
+    'channel.standby': 'VÄNTELÄGE',
+    'channel.linked': 'ANSLUTEN',
+    'channel.enterMessage': 'Skriv meddelande...',
     'hint.devInvite': 'Utveckla AI-appar eller AI-spel — se \"Reversi\" och \"AI Translate\".',
 };
 

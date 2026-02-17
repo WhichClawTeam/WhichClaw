@@ -379,7 +379,7 @@ export const LocalModelPlayer: React.FC<LocalModelPlayerProps> = ({ className, m
                 <div className="relative flex-1">
                     <div ref={logsContainerRef} onScroll={handleScroll} className="absolute inset-0 overflow-y-auto px-4 py-3 bg-cyber-terminal font-mono text-sm space-y-0.5 custom-scrollbar">
                         {logs.length === 0 && (
-                            <div className="flex items-center justify-center h-full">
+                            <div className="flex items-center justify-center" style={{ minHeight: 'calc(100% - 24px)' }}>
                                 <div className="font-mono text-center space-y-3">
                                     <div className="text-lg text-cyber-text-secondary/80">{'>'} {t('server.awaitingInit')}</div>
                                     <div className="text-base text-cyber-text-muted/70">{t('server.selectConfigStart')}</div>

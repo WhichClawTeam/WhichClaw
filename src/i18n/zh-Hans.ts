@@ -196,6 +196,13 @@ const zhHans: Partial<Translations> = {
     // API Key 加密状态提示
     'key.encrypted': '已全局加密，任何环境改变 API Key 将自毁',
     'key.destroyed': '检测到环境已改变，API Key 已自毁，请重新输入',
+    // Main Console
+    'nav.channels': '频道',
+    'page.channels': '频道',
+    // Channels
+    'channel.standby': '待命',
+    'channel.linked': '已连接',
+    'channel.enterMessage': '输入消息...',
     // 开发者邀请提示
     'hint.devInvite': '开发 AI 应用或 AI 游戏，参考「黑白棋」和「AI 翻译」。',
 };

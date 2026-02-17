@@ -183,6 +183,12 @@ const nl: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'Versleuteld — API Key wordt vernietigd bij omgevingswijziging)',
     'key.destroyed': 'Omgevingswijziging gedetecteerd — API Key is vernietigd, voer opnieuw in)',
+    // Channels
+    'nav.channels': 'Kanalen',
+    'page.channels': 'KANALEN',
+    'channel.standby': 'STAND-BY',
+    'channel.linked': 'VERBONDEN',
+    'channel.enterMessage': 'Voer bericht in...',
     'hint.devInvite': 'Ontwikkel AI-apps of AI-games — zie \"Reversi\" en \"AI Translate\".',
 };
 

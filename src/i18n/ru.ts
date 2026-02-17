@@ -183,6 +183,12 @@ const ru: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'Зашифровано — API Key самоуничтожится при изменении среды)',
     'key.destroyed': 'Обнаружено изменение среды — API Key уничтожен, введите заново',
+    // Channels
+    'nav.channels': 'Каналы',
+    'page.channels': 'КАНАЛЫ',
+    'channel.standby': 'ОЖИДАНИЕ',
+    'channel.linked': 'ПОДКЛЮЧЕНО',
+    'channel.enterMessage': 'Введите сообщение...',
     'hint.devInvite': 'Разрабатывайте AI-приложения или AI-игры — см. \"Реверси\" и \"AI Translate\".',
 };
 

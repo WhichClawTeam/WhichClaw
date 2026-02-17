@@ -183,6 +183,12 @@ const hu: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'Titkosítva — az API Key megsemmisül környezetváltozáskor)',
     'key.destroyed': 'Környezetváltozás észlelve — az API Key megsemmisült, kérjük adja meg újra',
+    // Channels
+    'nav.channels': 'Csatornák',
+    'page.channels': 'CSATORNÁK',
+    'channel.standby': 'KÉSZENLÉT',
+    'channel.linked': 'CSATLAKOZVA',
+    'channel.enterMessage': 'Írjon üzenetet...',
     'hint.devInvite': 'Fejlesszen AI alkalmazásokat vagy AI játékokat — lásd: \"Reversi\" és \"AI Translate\".',
 };
 

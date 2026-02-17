@@ -210,6 +210,13 @@ const en: Translations = {
     // API Key encryption status hints
     'key.encrypted': 'Encrypted globally — API Key will self-destruct if environment changes',
     'key.destroyed': 'Environment change detected — API Key has self-destructed, please re-enter',
+    // Main Console
+    'nav.channels': 'Channels',
+    'page.channels': 'CHANNELS',
+    // Channels
+    'channel.standby': 'STANDBY',
+    'channel.linked': 'LINKED',
+    'channel.enterMessage': 'Enter message...',
     'hint.devInvite': 'Develop AI apps or AI games — see \"Reversi\" and \"AI Translate\".',
 };
 

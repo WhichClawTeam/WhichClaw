@@ -264,8 +264,6 @@ export function updateModel(internalId: string, updates: {
     // Re-calculate type if baseUrl changes
     let newType = userModels[index].type;
     if (updates.baseUrl || updates.proxyUrl !== undefined) {
-        // const baseUrl = updates.baseUrl || userModels[index].baseUrl;
-        // const proxyUrl = updates.proxyUrl !== undefined ? updates.proxyUrl : userModels[index].proxyUrl;
         const urlToCheck = updates.baseUrl || userModels[index].baseUrl || '';
         newType = undefined; // Default to undefined
 

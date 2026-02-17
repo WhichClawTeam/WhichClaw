@@ -50,6 +50,12 @@ const he: Partial<Translations> = {
     // API Key encryption status hints
     'key.encrypted': 'מוצפן — API Key יושמד אוטומטית בשינוי סביבה)',
     'key.destroyed': 'זוהה שינוי סביבה — API Key הושמד, אנא הזן מחדש',
+    // Channels
+    'nav.channels': 'ערוצים',
+    'page.channels': 'ערוצים',
+    'channel.standby': 'המתנה',
+    'channel.linked': 'מחובר',
+    'channel.enterMessage': 'הקלד הודעה...',
     'hint.devInvite': 'פתחו אפליקציות AI או משחקי AI — ראו \"Reversi\" ו-\"AI Translate\".',
 };
 

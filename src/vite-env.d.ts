@@ -49,8 +49,12 @@ interface Window {
         getToolInstalledSkills: (skillsPath: string) => Promise<InstalledSkillInfo[]>;
         openFolder: (folderPath: string) => Promise<{ success: boolean; error?: string }>;
         getClaudeConfig: (configPath: string) => Promise<ClaudeConfig>;
+        // Channel APIs
+        getChannels: () => Promise<{ id: number; name: string; address: string; protocol: string }[]>;
+        saveChannels: (channels: { id: number; name: string; address: string; protocol: string }[]) => Promise<{ success: boolean }>;
         // Model APIs
         getModels: () => Promise<ModelConfig[]>;
+        getModelsDecrypted: () => Promise<ModelConfig[]>;
         addModel: (config: { name: string; baseUrl: string; anthropicUrl?: string; apiKey: string; modelId?: string; proxyUrl?: string; ssNode?: SSNodeConfig }) => Promise<ModelConfig>;
         deleteModel: (internalId: string) => Promise<boolean>;
         updateModel: (internalId: string, updates: { name?: string; baseUrl?: string; anthropicUrl?: string; apiKey?: string; modelId?: string; proxyUrl?: string; ssNode?: SSNodeConfig }) => Promise<ModelConfig | null>;
@@ -98,6 +102,7 @@ interface Window {
         onDownloadProgress: (callback: (data: { fileName: string; progress: number; downloaded: number; total: number; status: string }) => void) => void;
         // App Log APIs
         getAppLogs: () => Promise<{ timestamp: string; category: string; message: string }[]>;
+        addAppLog: (category: string, message: string) => Promise<{ success: boolean }>;
         clearAppLogs: () => Promise<{ success: boolean }>;
         onAppLog: (callback: (entry: { timestamp: string; category: string; message: string }) => void) => void;
         // Process management API
