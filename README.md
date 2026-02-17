@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>One Hub. All Models. Every Coding Tool.</strong><br/>
-  <sub>The hacker's control panel for the AI era.</sub>
+  <sub>A cyberpunk control panel for the AI era.</sub>
 </p>
 
 <p align="center">
@@ -54,7 +54,7 @@ WhichClaw acts as a **central control panel** for all your AI-powered coding too
 - 🖥️ **Local Model Server** — Run open-source models (Qwen, DeepSeek, Llama) locally via llama.cpp
 - 🌍 **28 Languages** — Full i18n support for a global audience
 - 🎮 **Built-in AI Apps** — Interactive AI games and utilities like Reversi and AI Translate
-- 🌃 **Cyberpunk Hacker UI** — Stunning neon-green terminal aesthetic that makes coding feel futuristic
+- 🌃 **Cyberpunk UI** — Stunning neon-green terminal aesthetic that makes coding feel futuristic
 
 ## 🖼️ Screenshots
 

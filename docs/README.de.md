@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>One Hub. All Models. Every Coding Tool.</strong><br/>
-  <sub>Das Hacker-Kontrollpanel für das KI-Zeitalter.</sub>
+  <sub>Ein Cyberpunk-Kontrollpanel für das KI-Zeitalter.</sub>
 </p>
 
 <p align="center">
@@ -44,7 +44,7 @@ WhichClaw fungiert als **zentrale Steuerungszentrale** für alle deine KI-Progra
 - 🖥️ **Lokaler Modell-Server** — Open-Source-Modelle (Qwen, DeepSeek, Llama) lokal über llama.cpp ausführen
 - 🌍 **28 Sprachen** — Vollständige Internationalisierung
 - 🎮 **Integrierte KI-Apps** — Interaktive KI-Spiele und Werkzeuge wie Reversi und AI Translate
-- 🌃 **Cyberpunk-Hacker-UI** — Atemberaubende neongrüne Terminal-Ästhetik
+- 🌃 **Cyberpunk-UI** — Atemberaubende neongrüne Terminal-Ästhetik
 
 ## 🖼️ Screenshots
 
