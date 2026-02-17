@@ -203,6 +203,7 @@ const zhHans: Partial<Translations> = {
     'channel.standby': '待命',
     'channel.linked': '已连接',
     'channel.enterMessage': '输入消息...',
+    'channel.awaitingResponse': '等待回复...',
     // 开发者邀请提示
     'hint.devInvite': '开发 AI 应用或 AI 游戏，参考「黑白棋」和「AI 翻译」。',
 };

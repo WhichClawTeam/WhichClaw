@@ -189,6 +189,7 @@ const bn: Partial<Translations> = {
     'channel.standby': 'অপেক্ষায়',
     'channel.linked': 'সংযুক্ত',
     'channel.enterMessage': 'বার্তা লিখুন...',
+    'channel.awaitingResponse': 'প্রতিক্রিয়ার অপেক্ষায়...',
     'hint.devInvite': 'AI অ্যাপ বা AI গেম তৈরি করুন — \"Reversi\" ও \"AI Translate\" দেখুন।',
 };
 

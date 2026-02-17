@@ -216,6 +216,7 @@ const ko: Partial<Translations> = {
     'channel.standby': '대기',
     'channel.linked': '연결됨',
     'channel.enterMessage': '메시지 입력...',
+    'channel.awaitingResponse': '응답 대기 중...',
     'hint.devInvite': 'AI 앱 또는 AI 게임 개발 — "리버시"와 "AI 번역"을 참고하세요.',
 };
 

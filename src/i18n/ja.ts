@@ -216,6 +216,7 @@ const ja: Partial<Translations> = {
     'channel.standby': '待機',
     'channel.linked': '接続済み',
     'channel.enterMessage': 'メッセージを入力...',
+    'channel.awaitingResponse': '応答を待っています...',
     'hint.devInvite': 'AI アプリや AI ゲームを開発 — 「リバーシ」と「AI 翻訳」を参考に。',
 };
 

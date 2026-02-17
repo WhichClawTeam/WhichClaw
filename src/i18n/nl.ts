@@ -189,6 +189,7 @@ const nl: Partial<Translations> = {
     'channel.standby': 'STAND-BY',
     'channel.linked': 'VERBONDEN',
     'channel.enterMessage': 'Voer bericht in...',
+    'channel.awaitingResponse': 'Wachten op antwoord...',
     'hint.devInvite': 'Ontwikkel AI-apps of AI-games — zie \"Reversi\" en \"AI Translate\".',
 };
 

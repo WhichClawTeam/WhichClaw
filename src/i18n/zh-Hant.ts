@@ -216,6 +216,7 @@ const zhHant: Partial<Translations> = {
     'channel.standby': '待命',
     'channel.linked': '已連線',
     'channel.enterMessage': '輸入訊息...',
+    'channel.awaitingResponse': '等待回覆...',
     'hint.devInvite': '開發 AI 應用或 AI 遊戲，參考「黑白棋」和「AI 翻譯」。',
 };
 

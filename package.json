@@ -1,6 +1,6 @@
 {
   "name": "whichclaw",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "AI Model & Skill Management Desktop Application",
   "author": "WhichClaw Team",
   "main": "dist-electron/main.cjs",
@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "js-yaml": "^4.1.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "systeminformation": "^5.30.7"
   },
   "devDependencies": {

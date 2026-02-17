@@ -98,7 +98,7 @@ export type TKey =
     // Main Console
     | 'nav.channels' | 'page.channels'
     // Channels
-    | 'channel.standby' | 'channel.linked' | 'channel.enterMessage'
+    | 'channel.standby' | 'channel.linked' | 'channel.enterMessage' | 'channel.awaitingResponse'
     // 开发者邀请提示
     | 'hint.devInvite';
 

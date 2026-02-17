@@ -56,6 +56,7 @@ const el: Partial<Translations> = {
     'channel.standby': 'ΑΝΑΜΟΝΉ',
     'channel.linked': 'ΣΥΝΔΕΔΕΜΈΝΟ',
     'channel.enterMessage': 'Εισάγετε μήνυμα...',
+    'channel.awaitingResponse': 'Αναμονή απάντησης...',
     'hint.devInvite': 'Αναπτύξτε AI εφαρμογές ή AI παιχνίδια — δείτε \"Reversi\" και \"AI Translate\".',
 };
 

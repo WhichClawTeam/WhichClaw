@@ -56,6 +56,7 @@ const he: Partial<Translations> = {
     'channel.standby': 'המתנה',
     'channel.linked': 'מחובר',
     'channel.enterMessage': 'הקלד הודעה...',
+    'channel.awaitingResponse': 'ממתין לתגובה...',
     'hint.devInvite': 'פתחו אפליקציות AI או משחקי AI — ראו \"Reversi\" ו-\"AI Translate\".',
 };
 

@@ -1,6 +1,6 @@
 {
-    "version": "1.0.5",
+    "version": "1.0.6",
     "releaseDate": "2026-02-18",
-    "releaseNotes": "Fixed WebSocket origin for production builds (OpenClaw connectivity)",
+    "releaseNotes": "Markdown rendering, smart scroll, React.memo optimization, native context menu, 28-lang i18n",
     "downloadUrl": "https://github.com/WhichClawTeam/WhichClaw/releases/latest"
 }

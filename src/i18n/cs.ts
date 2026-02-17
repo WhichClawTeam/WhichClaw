@@ -189,6 +189,7 @@ const cs: Partial<Translations> = {
     'channel.standby': 'POHOTOVOST',
     'channel.linked': 'PŘIPOJENO',
     'channel.enterMessage': 'Napište zprávu...',
+    'channel.awaitingResponse': 'Čekání na odpověď...',
     'hint.devInvite': 'Vyvíjejte AI aplikace nebo AI hry — viz \"Reversi\" a \"AI Translate\".',
 };
 

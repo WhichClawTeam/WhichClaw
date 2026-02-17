@@ -217,6 +217,7 @@ const en: Translations = {
     'channel.standby': 'STANDBY',
     'channel.linked': 'LINKED',
     'channel.enterMessage': 'Enter message...',
+    'channel.awaitingResponse': 'Awaiting response...',
     'hint.devInvite': 'Develop AI apps or AI games — see \"Reversi\" and \"AI Translate\".',
 };
 

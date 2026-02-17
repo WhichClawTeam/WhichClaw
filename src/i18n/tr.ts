@@ -189,6 +189,7 @@ const tr: Partial<Translations> = {
     'channel.standby': 'BEKLEMEDE',
     'channel.linked': 'BAĞLI',
     'channel.enterMessage': 'Mesaj yazın...',
+    'channel.awaitingResponse': 'Yanıt bekleniyor...',
     'hint.devInvite': 'AI uygulamaları veya AI oyunları geliştirin — \"Reversi\" ve \"AI Translate\"\'e bakın.',
 };
 

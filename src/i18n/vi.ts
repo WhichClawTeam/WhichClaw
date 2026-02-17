@@ -189,6 +189,7 @@ const vi: Partial<Translations> = {
     'channel.standby': 'CHỜ',
     'channel.linked': 'ĐÃ KẾT NỐI',
     'channel.enterMessage': 'Nhập tin nhắn...',
+    'channel.awaitingResponse': 'Đang chờ phản hồi...',
     'hint.devInvite': 'Phát triển ứng dụng hoặc trò chơi AI — tham khảo \"Reversi\" và \"AI Translate\".',
 };
 

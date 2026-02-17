@@ -124,6 +124,29 @@ function createWindow() {
         }
     );
 
+    // Native right-click context menu (Copy/Cut/Paste/Select All)
+    // Labels auto-localize via Electron role (no i18n needed)
+    mainWindow.webContents.on('context-menu', (_event, params) => {
+        const menuItems: Electron.MenuItemConstructorOptions[] = [];
+
+        if (params.isEditable) {
+            menuItems.push(
+                { role: 'cut', enabled: params.editFlags.canCut },
+                { role: 'copy', enabled: params.editFlags.canCopy },
+                { role: 'paste', enabled: params.editFlags.canPaste },
+                { type: 'separator' },
+                { role: 'selectAll', enabled: params.editFlags.canSelectAll }
+            );
+        } else if (params.selectionText) {
+            menuItems.push({ role: 'copy' });
+        }
+
+        if (menuItems.length > 0) {
+            const menu = Menu.buildFromTemplate(menuItems);
+            menu.popup();
+        }
+    });
+
     // 关闭窗口时隐藏到托盘而非退出
     mainWindow.on('close', (e) => {
         if (!isQuitting) {

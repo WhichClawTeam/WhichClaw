@@ -191,6 +191,7 @@ const ms: Partial<Translations> = {
     'channel.standby': 'SEDIA',
     'channel.linked': 'DISAMBUNG',
     'channel.enterMessage': 'Masukkan mesej...',
+    'channel.awaitingResponse': 'Menunggu respons...',
     'hint.devInvite': 'Bangunkan aplikasi atau permainan AI — rujuk \"Reversi\" dan \"AI Translate\".',
 };
 

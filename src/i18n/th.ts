@@ -191,6 +191,7 @@ const th: Partial<Translations> = {
     'channel.standby': 'รอ',
     'channel.linked': 'เชื่อมต่อแล้ว',
     'channel.enterMessage': 'พิมพ์ข้อความ...',
+    'channel.awaitingResponse': 'รอการตอบกลับ...',
     'hint.devInvite': 'พัฒนาแอป AI หรือเกม AI — ดูตัวอย่าง \"Reversi\" และ \"AI Translate\"',
 };
 

@@ -191,6 +191,7 @@ const id: Partial<Translations> = {
     'channel.standby': 'SIAGA',
     'channel.linked': 'TERHUBUNG',
     'channel.enterMessage': 'Masukkan pesan...',
+    'channel.awaitingResponse': 'Menunggu respons...',
     'hint.devInvite': 'Kembangkan aplikasi atau game AI — lihat \"Reversi\" dan \"AI Translate\".',
 };
 

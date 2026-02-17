@@ -56,6 +56,7 @@ const sv: Partial<Translations> = {
     'channel.standby': 'VÄNTELÄGE',
     'channel.linked': 'ANSLUTEN',
     'channel.enterMessage': 'Skriv meddelande...',
+    'channel.awaitingResponse': 'Väntar på svar...',
     'hint.devInvite': 'Utveckla AI-appar eller AI-spel — se \"Reversi\" och \"AI Translate\".',
 };
 

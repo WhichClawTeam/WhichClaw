@@ -189,6 +189,7 @@ const es: Partial<Translations> = {
     'channel.standby': 'EN ESPERA',
     'channel.linked': 'CONECTADO',
     'channel.enterMessage': 'Escribe un mensaje...',
+    'channel.awaitingResponse': 'Esperando respuesta...',
     'hint.devInvite': 'Desarrolla apps o juegos IA — consulta \"Reversi\" y \"AI Translate\".',
 };
 

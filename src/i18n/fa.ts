@@ -56,6 +56,7 @@ const fa: Partial<Translations> = {
     'channel.standby': 'در انتظار',
     'channel.linked': 'متصل',
     'channel.enterMessage': 'پیام بنویسید...',
+    'channel.awaitingResponse': 'در انتظار پاسخ...',
     'hint.devInvite': 'برنامه‌ها یا بازی‌های هوش مصنوعی بسازید — به \"Reversi\" و \"AI Translate\" مراجعه کنید.',
 };
 

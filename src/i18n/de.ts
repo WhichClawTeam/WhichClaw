@@ -216,6 +216,7 @@ const de: Partial<Translations> = {
     'channel.standby': 'BEREIT',
     'channel.linked': 'VERBUNDEN',
     'channel.enterMessage': 'Nachricht eingeben...',
+    'channel.awaitingResponse': 'Warte auf Antwort...',
     'hint.devInvite': 'KI-Apps oder KI-Spiele entwickeln — siehe \"Reversi\" und \"AI Translate\".',
 };
 

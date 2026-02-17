@@ -1,10 +1,80 @@
 // Channels — OpenClaw Gateway WebSocket chat interface (global GatewayContext)
-import { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Send, Plus, Minus, CornerDownLeft, X, Square, Paperclip, Image as ImageIcon, Trash2, Pencil, KeyRound } from 'lucide-react';
 import { MiniSelect } from './MiniSelect';
 import { getModelIcon } from './cards/ModelCard';
 import { useChannelGateway, useGatewayManager } from '../contexts/GatewayContext';
 import { useI18n } from '../hooks/useI18n';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
+// Markdown components config (stable reference, no re-creation per render)
+const mdComponents = {
+    code: ({ className, children, ...props }: any) => {
+        const isInline = !className;
+        return isInline ? (
+            <code className="bg-cyber-accent/10 text-cyber-accent px-1.5 py-0.5 rounded text-[0.85em] font-mono" {...props}>{children}</code>
+        ) : (
+            <code className={`block bg-black/40 border border-cyber-border/30 rounded-lg p-3 pr-10 my-2 text-[0.85em] font-mono text-cyber-text-primary overflow-x-auto whitespace-pre ${className || ''}`} {...props}>{children}</code>
+        );
+    },
+    pre: ({ children }: any) => {
+        const codeText = String(children?.props?.children || '').replace(/\n$/, '');
+        const isBlock = children?.props?.className;
+        if (!isBlock) return <>{children}</>;
+        return (
+            <div className="relative group">
+                {children}
+                <button
+                    onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                        navigator.clipboard.writeText(codeText);
+                        const btn = e.currentTarget;
+                        const svg = btn.querySelector('svg');
+                        if (svg) svg.style.display = 'none';
+                        btn.insertAdjacentHTML('beforeend', '<span class="copy-ok" style="color:#00ff9d">✓</span>');
+                        setTimeout(() => {
+                            const ok = btn.querySelector('.copy-ok');
+                            if (ok) ok.remove();
+                            if (svg) svg.style.display = '';
+                        }, 1500);
+                    }}
+                    className="absolute top-2 right-2 w-6 h-6 flex items-center justify-center text-cyber-text-muted/40 hover:text-cyber-accent transition-colors"
+                ><svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+            </div>
+        );
+    },
+    a: ({ href, children }: any) => (
+        <a href={href} className="text-cyber-accent hover:underline" onClick={(e: React.MouseEvent) => { e.preventDefault(); (window as any).electron?.openExternal(href); }}>{children}</a>
+    ),
+    strong: ({ children }: any) => <strong className="text-cyber-text-primary font-bold">{children}</strong>,
+    em: ({ children }: any) => <em className="text-cyber-accent/80">{children}</em>,
+    ul: ({ children }: any) => <ul className="list-disc list-inside my-1 space-y-0.5">{children}</ul>,
+    ol: ({ children }: any) => <ol className="list-decimal list-inside my-1 space-y-0.5">{children}</ol>,
+    h1: ({ children }: any) => <h1 className="text-lg font-bold text-cyber-text-primary mt-3 mb-1">{children}</h1>,
+    h2: ({ children }: any) => <h2 className="text-base font-bold text-cyber-text-primary mt-2 mb-1">{children}</h2>,
+    h3: ({ children }: any) => <h3 className="text-sm font-bold text-cyber-text-primary mt-2 mb-1">{children}</h3>,
+    blockquote: ({ children }: any) => <blockquote className="border-l-2 border-cyber-accent/40 pl-3 my-1 text-cyber-text-muted/60 italic">{children}</blockquote>,
+    hr: () => <hr className="border-cyber-border/30 my-2" />,
+    table: ({ children }: any) => <table className="border-collapse my-2 text-sm w-full">{children}</table>,
+    th: ({ children }: any) => <th className="border border-cyber-border/30 px-2 py-1 bg-cyber-accent/5 text-left font-bold">{children}</th>,
+    td: ({ children }: any) => <td className="border border-cyber-border/30 px-2 py-1">{children}</td>,
+};
+
+// Memoized message component — only re-renders when msg content/role changes
+const ChannelMessage = React.memo(({ role, content }: { role: string; content: string }) => {
+    if (role === 'user') {
+        return <p className="break-words whitespace-pre-wrap text-white">{`> ${content}`}</p>;
+    }
+    if (role === 'system') {
+        return <p className="break-words whitespace-pre-wrap text-red-400">{content}</p>;
+    }
+    return (
+        <div className="break-words text-cyber-text-muted/80 channel-markdown">
+            <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents}>{content}</ReactMarkdown>
+        </div>
+    );
+});
+ChannelMessage.displayName = 'ChannelMessage';
 
 // WebSocket-only protocols
 const PROTOCOLS = [
@@ -167,22 +237,36 @@ export const Channels: React.FC = () => {
         return () => { if (saveTimerRef.current) clearTimeout(saveTimerRef.current); };
     }, [channels]);
 
-    // Track message count for scroll behavior
-    const prevMsgCountRef = useRef(0);
+    // Smart scroll: auto-follow unless user scrolls up
+    const autoFollowRef = useRef(true);
+    const [showScrollBtn, setShowScrollBtn] = useState(false);
+    const chatContainerRef = useRef<HTMLDivElement>(null);
 
-    // Auto-scroll: instant on channel switch, smooth on new messages
+    const handleChatScroll = () => {
+        const container = chatContainerRef.current;
+        if (!container) return;
+        const isAtBottom = container.scrollHeight - container.scrollTop - container.clientHeight < 40;
+        autoFollowRef.current = isAtBottom;
+        setShowScrollBtn(!isAtBottom && messages.length > 0);
+    };
+
     useEffect(() => {
-        if (!scrollRef.current) return;
-        const isChannelSwitch = prevMsgCountRef.current === 0 && messages.length > 0;
-        const behavior = isChannelSwitch ? 'instant' as const : 'smooth' as const;
-        scrollRef.current.scrollIntoView({ behavior });
-        prevMsgCountRef.current = messages.length;
+        if (autoFollowRef.current && scrollRef.current) {
+            scrollRef.current.scrollIntoView({ behavior: 'auto' });
+        }
     }, [messages]);
 
-    // Reset count on channel switch for instant scroll
     useEffect(() => {
-        prevMsgCountRef.current = 0;
+        autoFollowRef.current = true;
+        setShowScrollBtn(false);
+        scrollRef.current?.scrollIntoView({ behavior: 'instant' as any });
     }, [activeId]);
+
+    const scrollToBottom = () => {
+        autoFollowRef.current = true;
+        setShowScrollBtn(false);
+        scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
 
     // Loading animation
     useEffect(() => {
@@ -564,39 +648,44 @@ export const Channels: React.FC = () => {
                         </div>
 
                         {/* Terminal chat area */}
-                        <div className="flex-1 overflow-y-auto mx-4 mt-1 bg-cyber-terminal font-mono text-xs space-y-1 custom-scrollbar p-4 rounded-lg">
-                            {/* System info — always visible */}
-                            <div className="space-y-1 select-none">
-                                <p className="text-cyber-accent">[SYS] Channels online</p>
-                                <p className="text-cyber-text-secondary">$ echo $CHANNEL</p>
-                                <p className="text-cyber-accent/80">Claw Channel #{String(activeChannel.id).padStart(2, '0')}</p>
-                                <p className="text-cyber-text-secondary">$ echo $PROTOCOL</p>
-                                <p className="text-cyber-accent/80">{activeChannel.protocol.replace('://', '').toUpperCase()} · {activeChannel.address}</p>
-                                <p className="text-cyber-text-secondary mt-2">$ connect --handshake</p>
-                                {gateway.status === 'connecting' && (
-                                    <p className="text-yellow-400">[SYS] Connecting...</p>
+                        <div className="relative flex-1 mx-4 mt-1">
+                            <div ref={chatContainerRef} onScroll={handleChatScroll} className="absolute inset-0 overflow-y-auto bg-cyber-terminal font-mono text-xs space-y-1 custom-scrollbar p-4 rounded-lg">
+                                {/* System info — always visible */}
+                                <div className="space-y-1 select-none">
+                                    <p className="text-cyber-accent">[SYS] Channels online</p>
+                                    <p className="text-cyber-text-secondary">$ echo $CHANNEL</p>
+                                    <p className="text-cyber-accent/80">Claw Channel #{String(activeChannel.id).padStart(2, '0')}</p>
+                                    <p className="text-cyber-text-secondary">$ echo $PROTOCOL</p>
+                                    <p className="text-cyber-accent/80">{activeChannel.protocol.replace('://', '').toUpperCase()} · {activeChannel.address}</p>
+                                    <p className="text-cyber-text-secondary mt-2">$ connect --handshake</p>
+                                    {gateway.status === 'connecting' && (
+                                        <p className="text-yellow-400">[SYS] Connecting...</p>
+                                    )}
+                                    {isActiveConnected && (
+                                        <p className="text-cyber-accent">[SYS] Connected to Gateway · {activeChannel.protocol.replace('://', '').toUpperCase()}</p>
+                                    )}
+                                    {gateway.status === 'error' && (
+                                        <p className="text-red-400">[SYS] Connection failed</p>
+                                    )}
+                                </div>
+
+                                {messages.map((msg, i) => (
+                                    <ChannelMessage key={i} role={msg.role} content={msg.content} />
+                                ))}
+
+                                {gateway.isLoading ? (
+                                    <p className="text-cyber-accent font-mono">[EXEC] <span className="inline-block w-8 text-left">{['>', '>>', '>>>', ''][arrowIndex]}</span> transmitting...</p>
+                                ) : isActiveConnected && (
+                                    <p className="text-cyber-accent">_ ready</p>
                                 )}
-                                {isActiveConnected && (
-                                    <p className="text-cyber-accent">[SYS] Connected to Gateway · {activeChannel.protocol.replace('://', '').toUpperCase()}</p>
-                                )}
-                                {gateway.status === 'error' && (
-                                    <p className="text-red-400">[SYS] Connection failed</p>
-                                )}
+                                <div ref={scrollRef} />
                             </div>
-
-                            {messages.map((msg, i) => (
-                                <p key={i} className={`break-words whitespace-pre-wrap ${msg.role === 'user' ? 'text-white'
-                                    : msg.role === 'system' ? 'text-red-400'
-                                        : 'text-cyber-text-muted/80'
-                                    }`}>{msg.role === 'user' ? `> ${msg.content}` : msg.content}</p>
-                            ))}
-
-                            {gateway.isLoading ? (
-                                <p className="text-cyber-accent font-mono">[EXEC] <span className="inline-block w-8 text-left">{['>', '>>', '>>>', ''][arrowIndex]}</span> transmitting...</p>
-                            ) : isActiveConnected && (
-                                <p className="text-cyber-accent">_ ready</p>
+                            {showScrollBtn && (
+                                <button
+                                    onClick={scrollToBottom}
+                                    className="absolute bottom-3 right-3 w-7 h-7 flex items-center justify-center bg-cyber-bg/90 border border-cyber-border/50 rounded text-cyber-text-secondary hover:text-cyber-accent hover:border-cyber-accent/50 transition-colors z-10"
+                                ><svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9l6 6 6-6" /></svg></button>
                             )}
-                            <div ref={scrollRef} />
                         </div>
 
                         {/* Input area */}
@@ -652,7 +741,7 @@ export const Channels: React.FC = () => {
                                         }
                                     }}
                                     onPaste={handlePaste}
-                                    placeholder={gateway.isLoading ? 'AWAITING RESPONSE...' : t('channel.enterMessage')}
+                                    placeholder={gateway.isLoading ? t('channel.awaitingResponse') : t('channel.enterMessage')}
                                     disabled={gateway.isLoading || !isActiveConnected}
                                     rows={3}
                                     className="w-full bg-transparent px-4 py-2 text-sm text-cyber-text font-mono outline-none placeholder:text-cyber-text-muted/50 disabled:opacity-30 resize-none"

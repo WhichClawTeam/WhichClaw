@@ -189,6 +189,7 @@ const ar: Partial<Translations> = {
     'channel.standby': 'في الانتظار',
     'channel.linked': 'متصل',
     'channel.enterMessage': 'أدخل رسالة...',
+    'channel.awaitingResponse': 'في انتظار الرد...',
     'hint.devInvite': 'طوّر تطبيقات أو ألعاب ذكاء اصطناعي — راجع \"Reversi\" و \"AI Translate\".',
 };
 

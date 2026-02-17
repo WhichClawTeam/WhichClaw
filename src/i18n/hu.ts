@@ -189,6 +189,7 @@ const hu: Partial<Translations> = {
     'channel.standby': 'KÉSZENLÉT',
     'channel.linked': 'CSATLAKOZVA',
     'channel.enterMessage': 'Írjon üzenetet...',
+    'channel.awaitingResponse': 'Válaszra várás...',
     'hint.devInvite': 'Fejlesszen AI alkalmazásokat vagy AI játékokat — lásd: \"Reversi\" és \"AI Translate\".',
 };
 

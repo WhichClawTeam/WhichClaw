@@ -56,6 +56,7 @@ const fi: Partial<Translations> = {
     'channel.standby': 'VALMIUSTILA',
     'channel.linked': 'YHDISTETTY',
     'channel.enterMessage': 'Kirjoita viesti...',
+    'channel.awaitingResponse': 'Odottaa vastausta...',
     'hint.devInvite': 'Kehitä tekoälysovelluksia tai -pelejä — katso \"Reversi\" ja \"AI Translate\".',
 };
 

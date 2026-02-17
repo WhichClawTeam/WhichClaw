@@ -189,6 +189,7 @@ const ru: Partial<Translations> = {
     'channel.standby': 'ОЖИДАНИЕ',
     'channel.linked': 'ПОДКЛЮЧЕНО',
     'channel.enterMessage': 'Введите сообщение...',
+    'channel.awaitingResponse': 'Ожидание ответа...',
     'hint.devInvite': 'Разрабатывайте AI-приложения или AI-игры — см. \"Реверси\" и \"AI Translate\".',
 };
 
