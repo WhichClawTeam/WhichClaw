@@ -39,7 +39,7 @@ const mdComponents = {
                         }, 1500);
                     }}
                     className="absolute top-2 right-2 w-6 h-6 flex items-center justify-center text-cyber-text-muted/40 hover:text-cyber-accent transition-colors"
-                ><svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+                ><svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="9" y="9" width="13" height="13" rx="2" /><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" /></svg></button>
             </div>
         );
     },
@@ -126,8 +126,8 @@ const parseAddress = (channel: Channel) => {
         || urlObj?.searchParams.get('Password')
         || addr.match(/[?&]password=([^&]+)/i)?.[1]
         || '';
-    const hostPort = addr.split('?')[0].split('#')[0];
-    const wsUrl = `${channel.protocol}${hostPort}`;
+    // Keep full URL (with query params) — OpenClaw requires token in URL for scope auth
+    const wsUrl = `${channel.protocol}${addr}`;
     return { wsUrl, token, password };
 };
 

@@ -1,6 +1,6 @@
 {
-    "version": "1.0.6",
+    "version": "1.0.7",
     "releaseDate": "2026-02-18",
-    "releaseNotes": "Markdown rendering, smart scroll, React.memo optimization, native context menu, 28-lang i18n",
+    "releaseNotes": "Fixed WebSocket token auth for remote OpenClaw connections (operator.write scope)",
     "downloadUrl": "https://github.com/WhichClawTeam/WhichClaw/releases/latest"
 }
