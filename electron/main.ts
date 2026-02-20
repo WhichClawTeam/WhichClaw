@@ -165,7 +165,7 @@ function createTrayIcon(color: 'green' | 'yellow' = 'green'): Electron.NativeIma
     // 7×7 pixel pattern (CyberNexus logo), 1=filled, 0=transparent
     const pixels = [
         [0, 1, 1, 1, 1, 1, 0],
-        [1, 0, 1, 1, 0, 1, 1],
+        [1, 0, 0, 0, 0, 1, 1],
         [1, 1, 1, 1, 1, 1, 1],
         [0, 1, 1, 1, 1, 1, 0],
         [1, 1, 1, 0, 1, 1, 1],
