@@ -5,7 +5,7 @@
 <h1 align="center">CyberNexus</h1>
 
 <p align="center">
-  <strong>The Nexus for **Models**, **Agents** & **Vibe Coding**.</strong><br/>
+  The Nexus for **Models**, **Agents** & **Vibe Coding**.<br/>
   <sub>A cyberpunk control panel for the AI era.</sub>
 </p>
 
